@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Clarity Logo Recreation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .logo {
+      display: inline-block;
+      position: relative;
+    }
+
+    .post {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 120px;
+      letter-spacing: 8px;
+      margin: 0;
+      color: transparent;
+      -webkit-text-stroke: 4px #BFF6F3;
+      paint-order: stroke fill;
+      filter:
+        drop-shadow(0 0 3px #BFF6F3)
+        drop-shadow(0 0 6px #6FD6D2)
+        drop-shadow(0 0 12px #2BB3B0);
+      animation: flicker 3s infinite;
+    }
+
+    .clarity-container {
+      position: relative;
+      margin-top: -20px;
+    }
+
+    .acorn {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+      position: relative;
+      vertical-align: middle;
+    }
+
+    /* Simple acorn icon using CSS */
+    .acorn::before {
+      content: '🌰';
+      font-size: 50px;
+      filter: drop-shadow(0 0 4px #FFF1C9)
+              drop-shadow(0 0 8px #F4D58A)
+              drop-shadow(0 0 16px #F4D58A)
+              drop-shadow(0 0 24px #E2A93B);
+      animation: flicker-gold 3.2s infinite;
+    }
+
+    .clarity {
+      font-family: 'Pacifico', cursive;
+      font-size: 80px;
+      color: #FFF1C9;
+      text-shadow:
+        0 0 4px #FFF1C9,
+        0 0 8px #F4D58A,
+        0 0 16px #F4D58A,
+        0 0 32px #E2A93B,
+        0 0 48px #E2A93B;
+      display: inline-block;
+      vertical-align: middle;
+      animation: flicker-gold 3.2s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.92; }
+    }
+
+    @keyframes flicker-gold {
+      0%, 100% { opacity: 1; }
+      47% { opacity: 0.94; }
+    }
+
+    .info {
+      color: #888;
+      margin-top: 60px;
+      font-size: 14px;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .info h2 {
+      color: #aaa;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .colors {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .color-group {
+      text-align: left;
+    }
+
+    .color-group h3 {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .color-swatch {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 8px 0;
+      font-size: 12px;
+      color: #999;
+    }
+
+    .swatch {
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      border: 1px solid #333;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .post {
+        font-size: 60px;
+        letter-spacing: 4px;
+      }
+
+      .clarity {
+        font-size: 40px;
+      }
+
+      .acorn {
+        width: 40px;
+        height: 40px;
+      }
+
+      .acorn::before {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <h1 class="post">POST</h1>
+      <div class="clarity-container">
+        <span class="acorn"></span>
+        <span class="clarity">Clarity</span>
+      </div>
+    </div>
+
+    <div class="info">
+      <h2>Logo Recreation Details</h2>
+      <p>
+        Recreated using the analyzed color palette and neon glow technique.
+        <strong>Fonts:</strong> Poppins ExtraBold for "POST", Pacifico for "Clarity".
+        <strong>Effect:</strong> Layered text-shadow with exponential blur growth (4px → 8px → 16px → 32px → 48px).
+      </p>
+
+      <div class="colors">
+        <div class="color-group">
+          <h3>Teal/Cyan (POST)</h3>
+          <div class="color-swatch">
+            <div class="swatch" style="background: #BFF6F3;"></div>
+            <span>#BFF6F3 - Core</span>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch" style="background: #6FD6D2;"></div>
+            <span>#6FD6D2 - Mid Glow</span>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch" style="background: #2BB3B0;"></div>
+            <span>#2BB3B0 - Outer Glow</span>
+          </div>
+        </div>
+
+        <div class="color-group">
+          <h3>Warm Gold (Clarity)</h3>
+          <div class="color-swatch">
+            <div class="swatch" style="background: #FFF1C9;"></div>
+            <span>#FFF1C9 - Core</span>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch" style="background: #F4D58A;"></div>
+            <span>#F4D58A - Mid Glow</span>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch" style="background: #E2A93B;"></div>
+            <span>#E2A93B - Outer Glow</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

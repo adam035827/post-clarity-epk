@@ -1,0 +1,15 @@
+.videos-section {
+  .content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    
+    .content-card {
+      p {
+        margin-bottom: var(--space-md);
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

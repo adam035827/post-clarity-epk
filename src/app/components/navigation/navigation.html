@@ -1,0 +1,45 @@
+<nav class="navigation">
+  <div class="nav-container">
+    <!-- Logo/Brand -->
+    <a routerLink="/" class="nav-brand" (click)="closeMobileMenu()">
+      Post Clarity
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-menu desktop">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+      <li><a routerLink="/bio" routerLinkActive="active">Bio</a></li>
+      <li><a routerLink="/music" routerLinkActive="active">Music</a></li>
+      <li><a routerLink="/photos" routerLinkActive="active">Photos</a></li>
+      <li><a routerLink="/videos" routerLinkActive="active">Videos</a></li>
+      <li><a routerLink="/press" routerLinkActive="active">Press</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+    </ul>
+
+    <!-- Mobile Menu Toggle -->
+    <button 
+      class="mobile-menu-toggle" 
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="mobileMenuOpen()"
+      aria-label="Toggle mobile menu">
+      <span class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  @if (mobileMenuOpen()) {
+    <ul class="nav-menu mobile">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">Home</a></li>
+      <li><a routerLink="/bio" routerLinkActive="active" (click)="closeMobileMenu()">Bio</a></li>
+      <li><a routerLink="/music" routerLinkActive="active" (click)="closeMobileMenu()">Music</a></li>
+      <li><a routerLink="/photos" routerLinkActive="active" (click)="closeMobileMenu()">Photos</a></li>
+      <li><a routerLink="/videos" routerLinkActive="active" (click)="closeMobileMenu()">Videos</a></li>
+      <li><a routerLink="/press" routerLinkActive="active" (click)="closeMobileMenu()">Press</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact</a></li>
+    </ul>
+  }
+</nav>

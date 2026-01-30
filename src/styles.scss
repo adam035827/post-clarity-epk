@@ -1,1 +1,247 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles - Post Clarity EPK */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&family=Pacifico&display=swap');
+
+/* CSS Custom Properties - Design System */
+:root {
+  /* Teal / Cyan Palette (POST) */
+  --color-teal-core: #BFF6F3;
+  --color-teal-mid: #6FD6D2;
+  --color-teal-outer: #2BB3B0;
+  
+  /* Warm Gold Palette (Clarity) */
+  --color-gold-core: #FFF1C9;
+  --color-gold-mid: #F4D58A;
+  --color-gold-outer: #E2A93B;
+  
+  /* Background Colors */
+  --bg-dark: #0a0a0a;
+  --bg-dark-alt: #121212;
+  --bg-dark-lighter: #1a1a1a;
+  
+  /* Color Opacity Variations */
+  --teal-10: rgba(191, 246, 243, 0.1);
+  --teal-20: rgba(191, 246, 243, 0.2);
+  --teal-30: rgba(191, 246, 243, 0.3);
+  --teal-50: rgba(191, 246, 243, 0.5);
+  --gold-10: rgba(255, 241, 201, 0.1);
+  --gold-20: rgba(255, 241, 201, 0.2);
+  
+  /* Typography */
+  --font-display: 'Poppins', sans-serif;
+  --font-script: 'Pacifico', cursive;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Spacing Scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-glow-teal: 0 0 20px rgba(191, 246, 243, 0.3);
+  --shadow-glow-gold: 0 0 20px rgba(255, 241, 201, 0.2);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Global Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-alt) 50%, var(--bg-dark) 100%);
+  background-attachment: fixed;
+  color: #fff;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  font-size: 16px;
+}
+
+/* Fluid Typography */
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+p {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.7;
+}
+
+/* Neon Effect Classes */
+
+/* Teal Neon - Hollow/Outlined (for "POST" style) */
+.neon-teal-outlined {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 7.5rem;
+  letter-spacing: 0.5rem;
+  color: transparent;
+  -webkit-text-stroke: 4px var(--color-teal-core);
+  paint-order: stroke fill;
+  filter:
+    drop-shadow(0 0 3px var(--color-teal-core))
+    drop-shadow(0 0 6px var(--color-teal-mid))
+    drop-shadow(0 0 12px var(--color-teal-outer));
+  animation: flicker-teal 3s infinite;
+}
+
+/* Gold Neon - Filled Script (for "Clarity" style) */
+.neon-gold {
+  font-family: var(--font-script);
+  font-size: 5rem;
+  color: var(--color-gold-core);
+  text-shadow:
+    0 0 4px var(--color-gold-core),
+    0 0 8px var(--color-gold-mid),
+    0 0 16px var(--color-gold-mid),
+    0 0 32px var(--color-gold-outer),
+    0 0 48px var(--color-gold-outer);
+  animation: flicker-gold 3.2s infinite;
+}
+
+/* Neon Flicker Animations */
+@keyframes flicker-teal {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.92; }
+}
+
+@keyframes flicker-gold {
+  0%, 100% { opacity: 1; }
+  47% { opacity: 0.94; }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .neon-teal-outlined {
+    font-size: 4rem;
+    letter-spacing: 0.3rem;
+    -webkit-text-stroke: 3px var(--color-teal-core);
+  }
+  
+  .neon-gold {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .neon-teal-outlined {
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    -webkit-text-stroke: 2px var(--color-teal-core);
+  }
+  
+  .neon-gold {
+    font-size: 2.5rem;
+  }
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-3xl) 0;
+  min-height: 60vh;
+}
+
+/* Glass Card Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Gradient Text Utility */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-teal-core), var(--color-teal-mid), var(--color-gold-mid));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Smooth Transitions */
+a, button {
+  transition: all var(--transition-base);
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 2px solid var(--color-teal-core);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

@@ -1,0 +1,14 @@
+.press-section {
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    
+    .content-card {
+      p {
+        margin-bottom: var(--space-md);
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

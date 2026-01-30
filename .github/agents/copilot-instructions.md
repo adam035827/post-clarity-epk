@@ -159,6 +159,100 @@ An EPK typically includes:
 
 ---
 
+## Brand Identity
+
+### Logo Analysis
+The Post Clarity logo features a dual-tone neon sign aesthetic with specific color palettes and typography.
+
+#### Color Palette
+
+**Teal / Cyan** (used in "POST" letters)
+- Core stroke (brightest): `#BFF6F3` - Very light aqua "tube" color
+- Mid glow: `#6FD6D2` - Good for gradients or softer glow layers
+- Outer glow: `#2BB3B0` - Deeper teal in the far glow
+
+**Warm Gold** (used in acorn icon and "Clarity" text)
+- Core stroke: `#FFF1C9` - Near-white warm yellow
+- Mid glow: `#F4D58A` - Warm amber tone
+- Outer glow: `#E2A93B` - Amber/orange tone in the halo
+
+#### Typography
+
+**"POST"** - Rounded Geometric Sans
+- Characteristics: Thick uniform stroke, rounded corners, wide friendly shapes, modern tech-style
+- Best match: **Poppins ExtraBold**
+- Alternatives: Montserrat Rounded, Nunito ExtraBold
+
+**"Clarity"** - Script / Sign-Painter Style
+- Characteristics: Smooth connected script, slight retro sign-painting vibe, rounded terminals
+- Best match: **Pacifico** (Google Fonts)
+- Alternatives: Allura, SignPainter, Great Vibes
+
+*Note: Logo fonts likely have custom tweaks, adjusted kerning, and outline/stroke effects.*
+
+#### Neon Glow Effect
+The logo uses a "neon sign" treatment with layered glow effects. To replicate in CSS:
+
+**Teal Neon (POST - Hollow/Outlined):**
+```css
+.neon-teal-outlined {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 120px;
+  letter-spacing: 8px;
+  color: transparent;
+  -webkit-text-stroke: 4px #BFF6F3;
+  paint-order: stroke fill;
+  filter:
+    drop-shadow(0 0 3px #BFF6F3)
+    drop-shadow(0 0 6px #6FD6D2)
+    drop-shadow(0 0 12px #2BB3B0);
+}
+```
+
+**Gold Neon (Clarity - Filled Script):**
+```css
+.neon-gold {
+  font-family: 'Pacifico', cursive;
+  font-size: 80px;
+  color: #FFF1C9;
+  text-shadow:
+    0 0 4px #FFF1C9,
+    0 0 8px #F4D58A,
+    0 0 16px #F4D58A,
+    0 0 32px #E2A93B,
+    0 0 48px #E2A93B;
+}
+```
+
+**Glow Technique:**
+- For hollow/outlined text: Use `color: transparent`, `-webkit-text-stroke`, and `drop-shadow` filter
+- For filled text: Use solid color with layered `text-shadow`
+- Blur values grow exponentially (3px → 6px → 12px) for subtle effect, or (4px → 8px → 16px → 32px) for stronger glow
+- Core stroke color + inner glow + outer glow using the same hue at different brightness/opacity
+- Dark backgrounds (#111, #1a1a1a, #000) make neon effects pop most effectively
+
+**Optional Flicker Animation:**
+```css
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.92; }
+}
+
+.neon {
+  animation: flicker 3s infinite;
+}
+```
+
+**Recommended Google Fonts Import:**
+```html
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Pacifico&display=swap" rel="stylesheet">
+```
+
+**Design Language:** "Dual-tone neon glow with a bright inner stroke, soft mid-glow, and wide diffused outer halo. Warm gold and cool teal neon tubing effect."
+
+---
+
 ## Best Practices
 
 ### Code Quality

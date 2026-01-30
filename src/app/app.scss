@@ -1,0 +1,60 @@
+.app-content {
+  min-height: calc(100vh - 70px);
+}
+
+/* Modern Section Styling */
+.section {
+  padding: var(--space-3xl) 0;
+  min-height: 60vh;
+  position: relative;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+  }
+}
+
+/* Section Title Styling */
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: var(--space-xl);
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-teal-core), var(--color-teal-mid), var(--color-gold-mid));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 12px rgba(191, 246, 243, 0.2));
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Content Container */
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  
+  p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: var(--space-md);
+    line-height: 1.8;
+  }
+}
+
+/* Glass Card Content Wrapper */
+.content-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg), 0 0 24px rgba(191, 246, 243, 0.15);
+    border-color: rgba(191, 246, 243, 0.2);
+  }
+}
