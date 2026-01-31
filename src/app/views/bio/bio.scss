@@ -5,11 +5,30 @@
     
     .content-card {
       line-height: 1.8;
-      font-size: 1.1rem;
+      font-size: 1.0625rem;
       
-      p {
-        margin-bottom: var(--space-md);
-        color: rgba(255, 255, 255, 0.85);
+      h2 {
+        color: var(--color-white);
+        margin-top: 0;
+        margin-bottom: var(--space-xl);
+        text-align: center;
+      }
+      
+      h3 {
+        color: var(--color-teal);
+        font-size: 1.25rem;
+        margin-top: var(--space-2xl);
+      }
+      
+      .cta-buttons {
+        display: flex;
+        gap: var(--space-md);
+        margin-top: var(--space-2xl);
+        flex-wrap: wrap;
+        
+        @media (max-width: 640px) {
+          flex-direction: column;
+        }
       }
     }
   }

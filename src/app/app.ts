@@ -9,4 +9,5 @@ import { Navigation } from './components/navigation/navigation';
   styleUrl: './app.scss'
 })
 export class App {
+  currentYear = new Date().getFullYear();
 }

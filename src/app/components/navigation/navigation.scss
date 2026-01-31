@@ -2,82 +2,90 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(18, 18, 18, 0.8);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(191, 246, 243, 0.15);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  background: var(--bg-dark);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .nav-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-sm) var(--space-xl);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 3rem;
 }
 
 .nav-brand {
-  font-size: 1.5rem;
-  font-weight: 700;
-  font-family: var(--font-display);
-  color: #fff;
   text-decoration: none;
-  transition: all var(--transition-base);
-  letter-spacing: 0.5px;
+  transition: opacity var(--transition);
+  display: flex;
+  align-items: center;
   
   &:hover {
-    color: var(--color-teal-core);
-    text-shadow: 0 0 20px rgba(191, 246, 243, 0.4);
-    transform: translateY(-1px);
+    opacity: 0.8;
+  }
+}
+
+.nav-logo {
+  height: 50px;
+  width: auto;
+  
+  @media (max-width: 768px) {
+    height: 38px;
+  }
+  
+  @media (max-width: 480px) {
+    height: 32px;
   }
 }
 
 .nav-menu {
-  list-style: none;
+  list-style: none !important;
   display: flex;
   gap: var(--space-xs);
   margin: 0;
   padding: 0;
   
+  &::before, &::after {
+    display: none;
+  }
+  
   li {
     margin: 0;
+    padding: 0;
+    list-style: none !important;
+    list-style-type: none !important;
+    
+    &::before, &::marker {
+      display: none !important;
+      content: none !important;
+    }
   }
   
   a {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--color-text-muted);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9375rem;
     font-weight: 500;
-    padding: 0.625rem 1.25rem;
-    border-radius: var(--radius-sm);
-    transition: all var(--transition-base);
+    padding: 0.625rem 1rem;
+    transition: color var(--transition);
     display: block;
     position: relative;
     
     &:hover {
-      color: var(--color-teal-core);
-      background: rgba(191, 246, 243, 0.1);
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(191, 246, 243, 0.2);
+      color: var(--color-teal);
     }
     
     &.active {
-      color: var(--color-teal-core);
-      background: rgba(191, 246, 243, 0.15);
-      box-shadow: 0 0 16px rgba(191, 246, 243, 0.3);
-      font-weight: 600;
+      color: var(--color-white);
       
       &::after {
         content: '';
         position: absolute;
         bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, var(--color-teal-core), transparent);
-        border-radius: 2px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--color-teal);
       }
     }
   }
@@ -97,43 +105,22 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(18, 18, 18, 0.95);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(191, 246, 243, 0.15);
+    background: var(--bg-dark);
+    border-bottom: 1px solid var(--border-subtle);
     flex-direction: column;
     gap: 0;
     padding: var(--space-sm) 0;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    animation: slideDown 0.3s ease-out;
     
     a {
       padding: var(--space-sm) var(--space-md);
-      border-radius: 0;
-      
-      &:hover, &.active {
-        background: rgba(191, 246, 243, 0.12);
-        transform: translateX(8px);
-      }
       
       &.active::after {
-        left: var(--space-md);
-        transform: none;
-        width: 3px;
-        height: 60%;
-        top: 20%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        top: 0;
       }
     }
-  }
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -143,7 +130,7 @@
   border: none;
   cursor: pointer;
   padding: var(--space-xs);
-  transition: all var(--transition-base);
+  transition: opacity var(--transition);
   
   @media (min-width: 769px) {
     display: none;
@@ -159,19 +146,12 @@
       display: block;
       width: 100%;
       height: 2px;
-      background: var(--color-teal-core);
-      border-radius: 2px;
-      transition: all var(--transition-base);
-      box-shadow: 0 0 8px rgba(191, 246, 243, 0.5);
+      background: var(--color-teal);
+      transition: background var(--transition);
     }
   }
   
   &:hover {
-    transform: scale(1.1);
-    
-    .hamburger-icon span {
-      background: var(--color-teal-mid);
-      box-shadow: 0 0 12px rgba(191, 246, 243, 0.7);
-    }
+    opacity: 0.8;
   }
 }
