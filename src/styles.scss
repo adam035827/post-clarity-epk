@@ -1,43 +1,57 @@
-/* Global Styles - Post Clarity EPK - Minimalist Design */
+/* Global Styles - Post Clarity EPK - Modern Design */
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* System Font Stack - No Google Fonts needed */
 
-/* CSS Custom Properties - Minimal Design System */
+/* CSS Custom Properties - Modern Design System */
 :root {
-  /* Core Colors - Minimal Palette */
-  --color-teal: #7FA8A6;
-  --color-gold: #D4A853;
+  /* Core Colors - Enhanced Palette */
+  --color-teal: #5fd4d1;
+  --color-teal-light: #7ee0dd;
+  --color-teal-dark: #3db8b5;
+  --color-gold: #fbbf24;
+  --color-gold-light: #fcd34d;
   --color-white: #ffffff;
-  --color-text: rgba(255, 255, 255, 0.9);
-  --color-text-muted: rgba(255, 255, 255, 0.6);
+  --color-text: rgba(255, 255, 255, 0.95);
+  --color-text-muted: rgba(255, 255, 255, 0.65);
+  --color-text-secondary: rgba(255, 255, 255, 0.5);
   
-  /* Background Colors - Solid Only */
+  /* Background Colors with Gradients */
   --bg-dark: #0a0a0a;
   --bg-dark-alt: #111111;
   --bg-card: #141414;
+  --bg-gradient-teal: linear-gradient(135deg, rgba(95, 212, 209, 0.1) 0%, rgba(95, 212, 209, 0.05) 100%);
+  --bg-gradient-subtle: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
   
-  /* Border Colors */
-  --border-subtle: rgba(255, 255, 255, 0.1);
-  --border-hover: rgba(95, 212, 209, 0.3);
+  /* Layered Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(95, 212, 209, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(95, 212, 209, 0.15);
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.7), 0 6px 12px rgba(0, 0, 0, 0.5), 0 3px 6px rgba(95, 212, 209, 0.2);
   
-  /* Typography */
-  --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Border Colors (for fallback only) */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(95, 212, 209, 0.4);
   
-  /* Spacing Scale */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-  --space-2xl: 4rem;
-  --space-3xl: 6rem;
+  /* Typography - System Font Stack */
+  --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif;
   
-  /* Border Radius - Minimal */
-  --radius: 4px;
+  /* Spacing Scale - Increased by ~25% */
+  --space-xs: 0.625rem;
+  --space-sm: 1.25rem;
+  --space-md: 1.875rem;
+  --space-lg: 2.5rem;
+  --space-xl: 3.75rem;
+  --space-2xl: 5rem;
+  --space-3xl: 7.5rem;
+  
+  /* Border Radius - Increased */
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 16px;
   
   /* Transitions */
-  --transition: 0.2s ease;
+  --transition: 0.2s ease-in-out;
+  --transition-slow: 0.3s ease-in-out;
 }
 
 /* Global Resets */
@@ -49,32 +63,34 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for sticky nav */
 }
 
 body {
   background: var(--bg-dark);
   color: var(--color-text);
   font-family: var(--font-base);
-  line-height: 1.6;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   font-size: 16px;
+  text-rendering: optimizeLegibility;
 }
 
 /* Clean Typography */
 h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
 }
 
 h2 {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
   margin-bottom: var(--space-lg);
   margin-top: var(--space-xl);
   
@@ -97,19 +113,48 @@ h3 {
 
 p {
   font-size: clamp(1rem, 1.5vw, 1.125rem);
-  line-height: 1.7;
+  line-height: 1.8;
   color: var(--color-text-muted);
 }
 
-/* Minimal Animations */
+/* Modern Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 
@@ -125,60 +170,71 @@ p {
   min-height: 60vh;
 }
 
-/* Minimal Card - Flat Design */
+/* Modern Card - Elevated Design with Shadows */
 .card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%), var(--bg-card);
+  border: none;
   border-radius: var(--radius);
-  padding: var(--space-xl);
-  transition: border-color var(--transition);
+  padding: var(--space-2xl) var(--space-xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition);
+  position: relative;
   
   &:hover {
-    border-color: var(--border-hover);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
   }
 }
 
-/* Minimal Buttons - Flat Design */
+/* Modern Buttons - Elevated Design */
 .btn-primary,
 .btn-secondary {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   font-size: 0.9375rem;
   font-weight: 500;
   text-decoration: none;
   border-radius: var(--radius);
   transition: all var(--transition);
   cursor: pointer;
-  border: 1px solid;
+  border: none;
   font-family: var(--font-base);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
 }
 
 .btn-primary {
-  background: var(--color-teal);
+  background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-teal-dark) 100%);
   color: var(--bg-dark);
-  border-color: var(--color-teal);
   
   &:hover {
-    background: transparent;
-    color: var(--color-teal);
+    background: linear-gradient(135deg, var(--color-teal-light) 0%, var(--color-teal) 100%);
   }
 }
 
 .btn-secondary {
-  background: transparent;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
   color: var(--color-text);
-  border-color: var(--border-subtle);
   
   &:hover {
-    border-color: var(--color-teal);
-    color: var(--color-teal);
+    background: linear-gradient(180deg, rgba(95, 212, 209, 0.15) 0%, rgba(95, 212, 209, 0.08) 100%);
+    color: var(--color-teal-light);
   }
 }
 
 .cta-buttons {
   display: flex;
-  gap: var(--space-sm);
-  margin-top: var(--space-lg);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
   flex-wrap: wrap;
   
   @media (max-width: 480px) {
@@ -191,27 +247,32 @@ p {
   }
 }
 
-/* Platform Links - Minimal */
+/* Platform Links - Elevated Design */
 .platform-link {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-md);
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--bg-gradient-subtle), var(--bg-card);
+  border: none;
   border-radius: var(--radius);
   text-decoration: none;
   color: var(--color-text);
-  transition: border-color var(--transition);
-  margin-bottom: var(--space-sm);
+  transition: all var(--transition);
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-sm);
   
   .icon {
     font-size: 1.5rem;
+    min-width: 2rem;
+    color: var(--color-teal);
   }
   
   &:hover {
-    border-color: var(--border-hover);
-    color: var(--color-teal);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    background: var(--bg-gradient-teal), var(--bg-card);
+    color: var(--color-teal-light);
   }
 }
 
@@ -221,20 +282,27 @@ p {
   margin: var(--space-lg) 0;
 }
 
-/* Info Sections - Minimal */
+/* Info Sections - Modern Elevated Design */
 .photo-callout,
 .download-section,
 .press-info,
 .booking-info,
 .technical-info {
-  margin: var(--space-xl) 0;
-  padding: var(--space-lg);
-  background: var(--bg-dark-alt);
-  border-left: 2px solid var(--color-teal);
+  margin: var(--space-2xl) 0;
+  padding: var(--space-xl);
+  background: var(--bg-gradient-teal), var(--bg-card);
+  border-left: 3px solid var(--color-teal);
   border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
   
   h3 {
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-md);
     color: var(--color-white);
     font-size: 1.25rem;
   }
@@ -244,23 +312,25 @@ p {
   }
   
   a:not(.btn-primary):not(.btn-secondary) {
-    color: var(--color-teal);
+    color: var(--color-teal-light);
     text-decoration: none;
-    transition: opacity var(--transition);
+    transition: all var(--transition);
+    border-bottom: 1px solid transparent;
     
     &:hover {
-      opacity: 0.8;
+      color: var(--color-teal);
+      border-bottom-color: var(--color-teal);
     }
   }
 }
 
-/* Lists - Minimal */
+/* Lists - Modern */
 ul {
   list-style: none;
   padding-left: 0;
   
   li {
-    padding: 0.5rem 0;
+    padding: 0.625rem 0;
     color: var(--color-text-muted);
     position: relative;
     padding-left: var(--space-md);
@@ -270,12 +340,20 @@ ul {
       position: absolute;
       left: 0;
       color: var(--color-teal);
+      font-weight: bold;
     }
   }
 }
 
-/* Focus Styles - Minimal */
+/* Focus Styles - Modern with Glow */
 *:focus-visible {
   outline: 2px solid var(--color-teal);
-  outline-offset: 2px;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(95, 212, 209, 0.2);
+}
+
+/* Text Selection Styling */
+::selection {
+  background: rgba(95, 212, 209, 0.3);
+  color: var(--color-white);
 }

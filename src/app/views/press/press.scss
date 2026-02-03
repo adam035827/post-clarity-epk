@@ -1,19 +1,20 @@
 .press-section {
   .content {
-    max-width: 900px;
+    max-width: 950px;
     margin: 0 auto;
     
     .content-card {
       h2 {
         color: var(--color-white);
         text-align: center;
-        margin-bottom: var(--space-xl);
+        margin-bottom: var(--space-2xl);
       }
       
       h3 {
-        color: var(--color-teal);
-        font-size: 1.25rem;
+        color: var(--color-teal-light);
+        font-size: 1.375rem;
         margin-top: var(--space-2xl);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
       }
     }
   }
