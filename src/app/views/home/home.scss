@@ -1,27 +1,33 @@
 .home-hero {
-  padding: 4rem 0;
+  padding: 0 0 3rem 0;
+  margin-top: -2rem;
   display: flex;
   align-items: center;
-  min-height: 70vh;
+  min-height: auto;
   background: linear-gradient(135deg, rgba(95, 212, 209, 0.05) 0%, rgba(251, 191, 36, 0.05) 100%);
+
+  .container {
+    max-width: 1450px;
+  }
 }
 
 .hero-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  gap: 6rem;
   align-items: center;
+  justify-content: space-between;
 }
 
 .hero-left {
-  max-width: 600px;
+  max-width: none;
 }
 
 .hero-title {
   font-size: clamp(2.75rem, 5.5vw, 4.5rem);
   font-weight: 700;
   line-height: 1.1;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: #fff;
   letter-spacing: -0.03em;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -31,7 +37,7 @@
   font-size: 1.25rem;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .hero-buttons {
@@ -45,42 +51,55 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 900px;
 }
 
 .band-silhouette {
   width: 100%;
-  max-width: 520px;
-  height: 380px;
+  max-width: none;
+  height: auto;
+  margin-bottom: 0;
   opacity: 0.92;
   filter: brightness(1.15) drop-shadow(0 8px 24px rgba(0, 0, 0, 0.6));
-  object-fit: cover;
-  object-position: center 30%;
   border-radius: var(--radius-lg);
-  transition: all var(--transition-slow);
-  
-  &:hover {
-    transform: scale(1.02);
-    filter: brightness(1.2) drop-shadow(0 12px 32px rgba(95, 212, 209, 0.3));
-  }
 }
 
 @media (max-width: 768px) {
   .home-hero {
-    padding: 3rem 0;
+    padding: 2rem 0 2rem 0;
+    margin-top: 0;
     min-height: auto;
+    
+    .container {
+      max-width: 100%;
+      padding: 0 var(--space-md);
+    }
   }
   
   .hero-split {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
+  }
+  
+  .hero-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
   
   .hero-right {
     order: -1;
+    height: auto;
+    margin-bottom: 1rem;
   }
   
   .band-silhouette {
-    max-width: 350px;
+    max-width: 100%;
+    width: 100%;
     opacity: 0.85;
   }
 }

@@ -76,12 +76,13 @@
 .section-title {
   font-size: clamp(1.875rem, 4vw, 2.5rem);
   font-weight: 600;
-  margin-bottom: var(--space-3xl);
+  margin: 0 auto var(--space-3xl) auto;
   color: var(--color-white);
   letter-spacing: -0.025em;
   position: relative;
   text-align: center;
-  padding-left: 0;
+  display: inline-block;
+  width: 100%;
   
   &::after {
     content: '';

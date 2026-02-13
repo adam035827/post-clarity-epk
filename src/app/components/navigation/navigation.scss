@@ -9,7 +9,7 @@
 }
 
 .nav-container {
-  padding: var(--space-md) var(--space-xl);
+  padding: var(--space-sm) var(--space-xl);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -111,12 +111,14 @@
   &.mobile {
     position: absolute;
     top: 100%;
-    left: 0;
-    right: 0;
+    right: var(--space-md);
+    left: auto;
+    width: 200px;
     background: rgba(10, 10, 10, 0.98);
     backdrop-filter: blur(12px);
     border-bottom: none;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    border-radius: var(--radius);
     flex-direction: column;
     gap: 0;
     padding: var(--space-sm) 0;
@@ -124,6 +126,7 @@
     a {
       padding: var(--space-md) var(--space-lg);
       border-radius: 0;
+      text-align: left;
       
       &.active::after {
         left: 0;
