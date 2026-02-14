@@ -10,25 +10,29 @@
       <div class="shows-list">
         @for (show of upcomingShows(); track show.date) {
           <div class="show-item">
-            <div class="show-date">
-              <span class="month">{{ show.month }}</span>
-              <span class="day">{{ show.day }}</span>
+            <div class="show-left">
+              <div class="show-date">
+                <span class="month">{{ show.month }}</span>
+                <span class="day">{{ show.day }}</span>
+              </div>
+              <div class="show-time">{{ show.dayTime }}</div>
             </div>
-            <div class="show-details">
+            <div class="show-right">
               <h4>{{ show.venue }}</h4>
-              <p class="venue">{{ show.dayTime }}</p>
               <p class="location">{{ show.location }}</p>
             </div>
           </div>
         } @empty {
           <div class="show-item">
-            <div class="show-date">
-              <span class="month">TBA</span>
-              <span class="day">--</span>
+            <div class="show-left">
+              <div class="show-date">
+                <span class="month">TBA</span>
+                <span class="day">--</span>
+              </div>
+              <div class="show-time">Coming Soon</div>
             </div>
-            <div class="show-details">
+            <div class="show-right">
               <h4>Check Back Soon!</h4>
-              <p class="venue">New shows coming soon</p>
               <p class="location">Kansas City Area</p>
             </div>
           </div>

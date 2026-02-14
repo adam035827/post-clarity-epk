@@ -8,6 +8,7 @@
 
   .container {
     max-width: 1450px;
+    padding: 0 var(--space-md);
   }
 }
 
@@ -21,6 +22,7 @@
 
 .hero-left {
   max-width: none;
+  text-align: center;
 }
 
 .hero-title {
@@ -72,7 +74,7 @@
     
     .container {
       max-width: 100%;
-      padding: 0 var(--space-md);
+      padding: 0 1.5rem;
     }
   }
   
@@ -137,9 +139,25 @@
     padding: var(--space-2xl) 0;
     
     .intro-content {
+      padding: 0 1.5rem;
+      
       p {
         font-size: 1.0625rem;
       }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero {
+    .container {
+      padding: 0 1rem !important;
+    }
+  }
+  
+  .intro-section {
+    .intro-content {
+      padding: 0 1rem !important;
     }
   }
 }

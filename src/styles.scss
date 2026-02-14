@@ -120,6 +120,11 @@ h3 {
   margin-left: auto !important;
   margin-right: auto !important;
   margin-bottom: var(--space-xl) !important;
+  padding: 0 1.5rem !important;
+  
+  @media (max-width: 480px) {
+    padding: 0 1rem !important;
+  }
 }
 
 p {
@@ -290,6 +295,12 @@ p {
   display: flex;
   flex-direction: column;
   margin: var(--space-lg) 0;
+  
+  @media (max-width: 640px) {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* Info Sections - Modern Elevated Design */

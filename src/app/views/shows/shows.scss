@@ -2,6 +2,11 @@
   .content {
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 1.5rem;
+    
+    @media (max-width: 480px) {
+      padding: 0 1rem !important;
+    }
   }
   
   .intro-text {
@@ -33,20 +38,58 @@
   }
   
   .show-item {
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important;
     gap: var(--space-xl);
-    padding: var(--space-xl);
+    padding: var(--space-lg);
     background: var(--bg-gradient-subtle), var(--bg-card);
     border-left: 3px solid var(--color-teal);
     border-radius: var(--radius);
     text-align: left;
     transition: all var(--transition);
-    box-shadow: var(--shadow-sm);
+    box-shadow: none;
+    align-items: center;
     
     &:hover {
       transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
+      box-shadow: none;
       background: var(--bg-gradient-teal), var(--bg-card);
+    }
+    
+    @media (max-width: 768px) {
+      gap: var(--space-md);
+      padding: var(--space-lg);
+      border-left: none;
+    }
+    
+    .show-left {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: var(--space-md);
+      align-items: center;
+      flex: 1;
+    }
+    
+    .show-right {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center;
+      flex: 1;
+      width: auto;
+      
+      h4 {
+        color: var(--color-white);
+        font-size: 1.25rem;
+        margin: 0 0 var(--space-sm) 0;
+        text-align: center;
+      }
+      
+      .location {
+        color: var(--color-text-muted);
+        font-size: 0.9375rem;
+        margin: 0;
+        text-align: center;
+      }
     }
     
     .show-date {
@@ -74,26 +117,11 @@
       }
     }
     
-    .show-details {
-      flex: 1;
-      
-      h4 {
-        color: var(--color-white);
-        font-size: 1.25rem;
-        margin: 0 0 var(--space-sm) 0;
-      }
-      
-      .venue {
-        color: var(--color-teal-light);
-        font-weight: 600;
-        margin: var(--space-xs) 0;
-      }
-      
-      .location {
-        color: var(--color-text-muted);
-        font-size: 0.9375rem;
-        margin: var(--space-xs) 0;
-      }
+    .show-time {
+      color: var(--color-teal-light);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      text-align: center;
     }
   }
   
@@ -109,6 +137,12 @@
     flex-direction: column;
     gap: var(--space-md);
     margin: var(--space-xl) 0 var(--space-2xl) 0;
+    
+    @media (max-width: 640px) {
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     
     .platform-link {
       display: flex;

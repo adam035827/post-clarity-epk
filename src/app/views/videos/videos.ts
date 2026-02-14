@@ -1,5 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+interface VideoItem {
+  url: string;
+  index: number;
+}
 
 @Component({
   selector: 'app-videos',
@@ -7,10 +12,11 @@ import { CommonModule } from '@angular/common';
   templateUrl: './videos.html',
   styleUrl: './videos.scss'
 })
-export class Videos {
+export class Videos implements OnInit {
   selectedVideoIndex = signal<number | null>(null);
+  videos: VideoItem[] = [];
   
-  videos = [
+  private videoUrls = [
     'https://postclarityvideos.blob.core.windows.net/videos/video-1.mp4',
     'https://postclarityvideos.blob.core.windows.net/videos/video-2.mp4',
     'https://postclarityvideos.blob.core.windows.net/videos/video-3.mp4',
@@ -25,6 +31,13 @@ export class Videos {
     'https://postclarityvideos.blob.core.windows.net/videos/video-12.mp4',
     'https://postclarityvideos.blob.core.windows.net/videos/video-13.mp4'
   ];
+  
+  ngOnInit() {
+    this.videos = this.videoUrls.map((url, index) => ({
+      url,
+      index
+    }));
+  }
   
   openVideo(index: number) {
     this.selectedVideoIndex.set(index);

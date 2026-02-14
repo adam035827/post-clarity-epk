@@ -69,6 +69,14 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--space-md);
+    
+    @media (max-width: 768px) {
+      padding: 0 1.5rem;
+    }
+    
+    @media (max-width: 480px) {
+      padding: 0 1rem;
+    }
   }
 }
 
@@ -76,6 +84,15 @@
 .content {
   max-width: 900px;
   margin: 0 auto;
+  padding: 0 var(--space-md);
+  
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0 0.75rem;
+  }
   
   p {
     color: var(--color-text-muted);

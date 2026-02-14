@@ -3,6 +3,11 @@
     max-width: 1400px;
     margin: 0 auto;
     text-align: center;
+    padding: 0 1.5rem;
+    
+    @media (max-width: 480px) {
+      padding: 0 1rem !important;
+    }
   }
   
   h2 {
