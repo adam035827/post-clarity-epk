@@ -72,30 +72,6 @@
   }
 }
 
-/* Section Title Styling - Modern with Enhanced Accent */
-.section-title {
-  font-size: clamp(1.875rem, 4vw, 2.5rem);
-  font-weight: 600;
-  margin: 0 auto var(--space-3xl) auto;
-  color: var(--color-white);
-  letter-spacing: -0.025em;
-  position: relative;
-  text-align: center;
-  display: inline-block;
-  width: 100%;
-  
-  &::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--color-teal) 0%, var(--color-teal-light) 100%);
-    margin: 1.25rem auto 0;
-    border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(127, 168, 166, 0.4);
-  }
-}
-
 /* Content Container */
 .content {
   max-width: 900px;
@@ -168,4 +144,9 @@
     height: 130px;
     opacity: 0.05;
   }
+}
+
+/* Center intro text in content cards (first paragraph after title) */
+.content-card > p:first-child {
+  text-align: center;
 }

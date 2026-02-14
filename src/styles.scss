@@ -111,6 +111,17 @@ h3 {
   }
 }
 
+.section-title {
+  display: flex !important;
+  align-content: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: var(--space-xl) !important;
+}
+
 p {
   font-size: clamp(1rem, 1.5vw, 1.125rem);
   line-height: 1.8;

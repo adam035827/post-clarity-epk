@@ -1,26 +1,49 @@
-import { Component, AfterViewInit, PLATFORM_ID, Inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-videos',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './videos.html',
   styleUrl: './videos.scss'
 })
-export class Videos implements AfterViewInit {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+export class Videos {
+  selectedVideoIndex = signal<number | null>(null);
   
-  ngAfterViewInit() {
-    // Load Instagram embed script
-    if (isPlatformBrowser(this.platformId)) {
-      if (!(window as any).instgrm) {
-        const script = document.createElement('script');
-        script.src = 'https://www.instagram.com/embed.js';
-        script.async = true;
-        document.body.appendChild(script);
-      } else {
-        (window as any).instgrm.Embeds.process();
-      }
+  videos = [
+    'video-1.mp4',
+    'video-2.mp4',
+    'video-3.mp4',
+    'video-4.mp4',
+    'video-5.mp4',
+    'video-6.mp4',
+    'video-7.mp4',
+    'video-8.mp4',
+    'video-9.mp4',
+    'video-10.mp4',
+    'video-11.mp4',
+    'video-12.mp4'
+  ];
+  
+  openVideo(index: number) {
+    this.selectedVideoIndex.set(index);
+  }
+  
+  closeVideo() {
+    this.selectedVideoIndex.set(null);
+  }
+  
+  nextVideo() {
+    const current = this.selectedVideoIndex();
+    if (current !== null && current < this.videos.length - 1) {
+      this.selectedVideoIndex.set(current + 1);
+    }
+  }
+  
+  previousVideo() {
+    const current = this.selectedVideoIndex();
+    if (current !== null && current > 0) {
+      this.selectedVideoIndex.set(current - 1);
     }
   }
 }
