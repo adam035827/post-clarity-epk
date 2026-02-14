@@ -13,7 +13,7 @@
         @for (video of videos; track video; let i = $index) {
           <div class="video-item" (click)="openVideo(i)">
             <video class="video-thumbnail" muted>
-              <source [src]="'/assets/videos/' + video" type="video/mp4">
+              <source [src]="video" type="video/mp4">
             </video>
             <div class="video-overlay">
               <div class="play-button">▶</div>
@@ -40,7 +40,7 @@
           
           <div class="modal-content" (click)="$event.stopPropagation()">
             <video controls autoplay>
-              <source [src]="'/assets/videos/' + videos[selectedVideoIndex()!]" type="video/mp4">
+              <source [src]="videos[selectedVideoIndex()!]" type="video/mp4">
             </video>
             <div class="modal-counter">{{ selectedVideoIndex()! + 1 }} / {{ videos.length }}</div>
           </div>
