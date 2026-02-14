@@ -11,91 +11,35 @@
       </div>
 
       <div class="photo-gallery">
-        <div class="photo-item">
-          <img src="/assets/images/band/14BFDE2D-F125-4C4E-AB61-BAF7A205AB29.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/1A687067-1C96-4F22-BC0A-099A81A01977.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/A7400065-Enhanced-NR.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/A7400116-Enhanced-NR.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/A7409393-Enhanced-NR.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/A7409406-Enhanced-NR.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/A7409435-Enhanced-NR.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/A7409483-Enhanced-NR.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/A7409540-Enhanced-NR.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/A7409631-Enhanced-NR.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/A7409696-Enhanced-NR_Original.JPG.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/A7409910-Enhanced-NR_Original.JPG.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/A7409926-Enhanced-NR.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/A7409932-Enhanced-NR.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/A7409938-Enhanced-NR.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/A7409990-Enhanced-NR.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/DSC07576.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/DSC07635.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/DSC07670.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/DSC07726.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/DSC07729.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/DSC07797.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/DSC_0145_VSCO.jpg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/DSC_0249.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/DSC_0910_Original.JPG.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/IMG_1382_Original.JPG.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/IMG_5472_VSCO.jpg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
-        <div class="photo-item">
-          <img src="/assets/images/band/IMG_8707.jpeg.optimized.jpg" alt="Post Clarity Performance" loading="lazy">
-        </div>
+        @for (photo of photos; track photo; let i = $index) {
+          <div class="photo-item" (click)="openLightbox(i)">
+            <img [src]="photo" alt="Post Clarity Performance" loading="lazy">
+          </div>
+        }
       </div>
+      
+      @if (selectedPhotoIndex() !== null) {
+        <div class="lightbox" (click)="closeLightbox()">
+          <button class="lightbox-close" (click)="closeLightbox()" aria-label="Close">&times;</button>
+          
+          @if (selectedPhotoIndex()! > 0) {
+            <button class="lightbox-nav lightbox-prev" (click)="previousPhoto(); $event.stopPropagation()" aria-label="Previous photo">
+              &#8249;
+            </button>
+          }
+          
+          @if (selectedPhotoIndex()! < photos.length - 1) {
+            <button class="lightbox-nav lightbox-next" (click)="nextPhoto(); $event.stopPropagation()" aria-label="Next photo">
+              &#8250;
+            </button>
+          }
+          
+          <div class="lightbox-content" (click)="$event.stopPropagation()">
+            <img [src]="photos[selectedPhotoIndex()!]" alt="Post Clarity Performance" />
+            <div class="lightbox-counter">{{ selectedPhotoIndex()! + 1 }} / {{ photos.length }}</div>
+          </div>
+        </div>
+      }
 
       <div class="content-card" style="margin-top: 3rem;">
         <div class="photo-callout">
