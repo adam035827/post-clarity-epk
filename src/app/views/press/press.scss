@@ -22,6 +22,31 @@
     }
   }
 
+  .awards-section {
+    margin: var(--space-2xl) 0;
+    text-align: center;
+    padding: var(--space-xl);
+    background: rgba(93, 217, 193, 0.05);
+    border-radius: var(--radius);
+
+    h2 {
+      color: var(--color-teal-light);
+      margin-bottom: var(--space-xl);
+      font-size: 1.5rem;
+    }
+
+    .award-image {
+      max-width: 200px;
+      height: auto;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      
+      @media (max-width: 768px) {
+        max-width: 150px;
+      }
+    }
+  }
+
   .press-info {
     border-left: none;
     display: flex;
