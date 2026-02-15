@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 interface VideoItem {
   url: string;
+  poster: string;
   index: number;
 }
 
@@ -35,6 +36,7 @@ export class Videos implements OnInit {
   ngOnInit() {
     this.videos = this.videoUrls.map((url, index) => ({
       url,
+      poster: `/assets/images/video-thumbnails/video-${index + 1}.jpg`,
       index
     }));
   }
