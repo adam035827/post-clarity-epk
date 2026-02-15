@@ -12,7 +12,7 @@
       <div class="video-grid">
         @for (video of videos; track video.url; let i = $index) {
           <div class="video-item" (click)="openVideo(i)">
-            <video class="video-thumbnail" muted preload="metadata">
+            <video class="video-thumbnail" muted preload="metadata" crossorigin="anonymous">
               <source [src]="video.url" type="video/mp4">
             </video>
             <div class="video-overlay">
@@ -39,7 +39,7 @@
           }
           
           <div class="modal-content" (click)="$event.stopPropagation()">
-            <video controls autoplay>
+            <video controls autoplay crossorigin="anonymous">
               <source [src]="videos[selectedVideoIndex()!].url" type="video/mp4">
             </video>
             <div class="modal-counter">{{ selectedVideoIndex()! + 1 }} / {{ videos.length }}</div>
