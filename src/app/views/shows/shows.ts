@@ -20,7 +20,6 @@ export class Shows {
   private allShows = signal<Show[]>([
     { date: new Date('2026-02-20T21:00:00'), month: 'FEB', day: '20', venue: 'Tin Roof - Kansas City', dayTime: 'Friday, 9:00 PM - 1:00 AM', location: '424 Westport Road, Kansas City, MO 64111' },
     { date: new Date('2026-02-21T21:00:00'), month: 'FEB', day: '21', venue: 'Tin Roof - Kansas City', dayTime: 'Saturday, 9:00 PM - 1:00 AM', location: '424 Westport Road, Kansas City, MO 64111' },
-    { date: new Date('2026-03-28T21:00:00'), month: 'MAR', day: '28', venue: 'Nighthawk', dayTime: 'Saturday, 9:00 PM - 1:00 AM', location: '1228 Baltimore Ave, Kansas City, MO 64105' },
     { date: new Date('2026-05-23T21:00:00'), month: 'MAY', day: '23', venue: 'Nighthawk', dayTime: 'Saturday, 9:00 PM - 1:00 AM', location: '1228 Baltimore Ave, Kansas City, MO 64105' },
     { date: new Date('2026-06-27T21:00:00'), month: 'JUN', day: '27', venue: 'Nighthawk', dayTime: 'Saturday, 9:00 PM - 1:00 AM', location: '1228 Baltimore Ave, Kansas City, MO 64105' },
     { date: new Date('2026-07-25T21:00:00'), month: 'JUL', day: '25', venue: 'Nighthawk', dayTime: 'Saturday, 9:00 PM - 1:00 AM', location: '1228 Baltimore Ave, Kansas City, MO 64105' },
