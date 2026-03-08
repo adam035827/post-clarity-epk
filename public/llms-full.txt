@@ -1,0 +1,117 @@
+# Post Clarity — Full Content Index
+
+This file contains the complete prose content from the Post Clarity Electronic Press Kit (EPK) website for AI and LLM indexing purposes.
+
+---
+
+## Home
+
+Post Clarity is a professional cover band delivering high-energy live performances across Kansas City and beyond. This Electronic Press Kit (EPK) is the official resource for booking agents, event planners, media professionals, and fans.
+
+Whether you're planning a corporate event, wedding, festival, or private party, Post Clarity brings the perfect soundtrack to make any event unforgettable. The EPK includes biography, performance videos, photos, press materials, upcoming show dates, and booking information.
+
+---
+
+## Biography
+
+Post Clarity is Kansas City's premier cover band, delivering high-energy performances that bring favorite hits to life. With a diverse setlist spanning multiple decades and genres, the band specializes in creating unforgettable experiences for corporate events, weddings, festivals, and private parties.
+
+The talented musicians combine technical excellence with genuine passion, ensuring every performance connects with audiences of all ages. From classic rock anthems to contemporary pop hits, Post Clarity adapts to any venue and vibe, making every event memorable.
+
+Based in the heart of Kansas City, Post Clarity has built a reputation for professionalism, versatility, and delivering performances that keep dance floors packed and guests talking long after the last note fades.
+
+**What Post Clarity offers:**
+- Extensive repertoire covering pop, punk, pop-punk, emo, and 2000s-era hits
+- Professional sound and lighting equipment
+- Customizable setlists to match your event
+- Experienced performers with years of live performance expertise
+- Full liability insurance and professional contracts
+
+---
+
+## Upcoming Shows
+
+All upcoming performances for Post Clarity in 2026:
+
+**March 21, 2026**
+- Venue: Greenway — Best of the Industry 2026
+- Time: Saturday, 8:00 PM – 11:00 PM
+- Address: 3951 Broadway Boulevard, Kansas City, MO 64111
+
+**May 23, 2026**
+- Venue: Nighthawk
+- Time: Saturday, 9:00 PM – 1:00 AM
+- Address: 1228 Baltimore Ave, Kansas City, MO 64105
+
+**June 27, 2026**
+- Venue: Nighthawk
+- Time: Saturday, 9:00 PM – 1:00 AM
+- Address: 1228 Baltimore Ave, Kansas City, MO 64105
+
+**July 25, 2026**
+- Venue: Nighthawk
+- Time: Saturday, 9:00 PM – 1:00 AM
+- Address: 1228 Baltimore Ave, Kansas City, MO 64105
+
+**August 7, 2026**
+- Venue: Tin Roof — Kansas City
+- Time: Friday, 10:30 PM – 2:30 AM
+- Address: 424 Westport Road, Kansas City, MO 64111
+
+**August 8, 2026**
+- Venue: Tin Roof — Kansas City
+- Time: Saturday, 10:30 PM – 2:30 AM
+- Address: 424 Westport Road, Kansas City, MO 64111
+
+**August 21, 2026**
+- Venue: Power & Light
+- Time: Friday, 9:00 PM – 12:00 AM
+- Address: Power & Light District, Kansas City, MO
+
+**August 29, 2026**
+- Venue: Nighthawk
+- Time: Saturday, 9:00 PM – 1:00 AM
+- Address: 1228 Baltimore Ave, Kansas City, MO 64105
+
+**September 26, 2026**
+- Venue: Nighthawk
+- Time: Saturday, 9:00 PM – 1:00 AM
+- Address: 1228 Baltimore Ave, Kansas City, MO 64105
+
+---
+
+## Contact & Booking
+
+Post Clarity is available for booking for corporate events, weddings, private parties, festivals, and bar/club performances throughout the Kansas City metro area.
+
+**Email:** band@postclaritykc.com  
+**Response time:** Typically within 24–48 hours.
+
+**Social Media & Online Presence:**
+- Instagram: https://instagram.com/postclarity_kc
+- Facebook: https://facebook.com/Post-Clarity-103570785341715
+- TikTok: https://tiktok.com/@post_clarity_kc
+- YouTube: https://youtube.com/channel/UC1_DICofQgApv-Vg_BpDaMQ
+- Merch Store: https://postclarity.printify.me
+- Venmo (support the band): @post-clarity-kc
+
+---
+
+## Press
+
+The press kit is available for download at https://postclaritykc.com/press. It includes high-resolution photos, band biography, logos, and media assets for use in event promotion and media coverage.
+
+---
+
+## About This Site
+
+This is the official Electronic Press Kit (EPK) for Post Clarity, built as a single-page application. The EPK serves as the primary digital presence for booking agents, event planners, journalists, and fans seeking information about the band.
+
+**Site sections:**
+- / — Home / EPK landing page
+- /bio — Band biography
+- /shows — Upcoming performances
+- /videos — Performance and music videos
+- /photos — Band photography
+- /press — Press kit and media downloads
+- /contact — Booking and contact information

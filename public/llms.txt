@@ -1,0 +1,45 @@
+# Post Clarity
+
+> Post Clarity is Kansas City's premier professional cover band, delivering high-energy live performances for corporate events, weddings, festivals, and private parties. Based in Kansas City, MO.
+
+Post Clarity specializes in pop, punk, pop-punk, emo, and 2000s-era hits. The band is available for booking throughout the Kansas City metro area and beyond.
+
+## About
+
+- [Biography](/bio): Full band biography, background, and what makes Post Clarity unique as a live entertainment act.
+- [Home](/): Official Electronic Press Kit (EPK) landing page.
+
+## Shows & Performances
+
+- [Upcoming Shows](/shows): Full list of upcoming live performances with dates, venues, and times.
+
+Upcoming shows include:
+- March 21, 2026 — Greenway (Best of the Industry 2026), 3951 Broadway Blvd, Kansas City, MO
+- May 23, 2026 — Nighthawk, 1228 Baltimore Ave, Kansas City, MO
+- June 27, 2026 — Nighthawk, 1228 Baltimore Ave, Kansas City, MO
+- July 25, 2026 — Nighthawk, 1228 Baltimore Ave, Kansas City, MO
+- August 7, 2026 — Tin Roof Kansas City, 424 Westport Road, Kansas City, MO
+- August 8, 2026 — Tin Roof Kansas City, 424 Westport Road, Kansas City, MO
+- August 21, 2026 — Power & Light District, Kansas City, MO
+- August 29, 2026 — Nighthawk, 1228 Baltimore Ave, Kansas City, MO
+- September 26, 2026 — Nighthawk, 1228 Baltimore Ave, Kansas City, MO
+
+## Media & Press
+
+- [Videos](/videos): Live performance videos and music videos.
+- [Photos](/photos): Band and live performance photography.
+- [Press](/press): Press kit downloads, bios, and media assets.
+
+## Booking & Contact
+
+- [Contact](/contact): Booking inquiries, availability, and pricing.
+- Email: band@postclaritykc.com
+- Instagram: https://instagram.com/postclarity_kc
+- Facebook: https://facebook.com/Post-Clarity-103570785341715
+- TikTok: https://tiktok.com/@post_clarity_kc
+- YouTube: https://youtube.com/channel/UC1_DICofQgApv-Vg_BpDaMQ
+- Merch: https://postclarity.printify.me
+
+## Optional
+
+- [llms-full.txt](/llms-full.txt): Full prose content for deeper AI indexing.

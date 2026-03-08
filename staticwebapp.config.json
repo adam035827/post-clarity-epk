@@ -1,7 +1,7 @@
 {
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": ["/assets/*"]
+    "exclude": ["/assets/*", "/llms.txt", "/llms-full.txt", "/robots.txt", "/sitemap.xml"]
   },
   "routes": [
     {
@@ -18,7 +18,8 @@
   "mimeTypes": {
     ".json": "application/json",
     ".woff": "font/woff",
-    ".woff2": "font/woff2"
+    ".woff2": "font/woff2",
+    ".txt": "text/plain"
   },
   "globalHeaders": {
     "content-security-policy": "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https:;",
