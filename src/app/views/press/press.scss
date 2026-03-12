@@ -35,6 +35,13 @@
       font-size: 1.5rem;
     }
 
+    .awards-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-xl);
+    }
+
     .award-image {
       max-width: 200px;
       height: auto;
