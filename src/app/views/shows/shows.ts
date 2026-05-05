@@ -1,5 +1,4 @@
 import { Component, computed, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 interface Show {
   date: Date;
@@ -12,7 +11,6 @@ interface Show {
 
 @Component({
   selector: 'app-shows',
-  imports: [CommonModule],
   templateUrl: './shows.html',
   styleUrl: './shows.scss'
 })
@@ -21,6 +19,7 @@ export class Shows {
     { date: new Date('2026-02-20T21:00:00'), month: 'FEB', day: '20', venue: 'Tin Roof - Kansas City', dayTime: 'Friday, 9:00 PM - 1:00 AM', location: '424 Westport Road, Kansas City, MO 64111' },
     { date: new Date('2026-02-21T21:00:00'), month: 'FEB', day: '21', venue: 'Tin Roof - Kansas City', dayTime: 'Saturday, 9:00 PM - 1:00 AM', location: '424 Westport Road, Kansas City, MO 64111' },
     { date: new Date('2026-03-21T20:00:00'), month: 'MAR', day: '21', venue: 'Greenway - Best of the Industry 2026', dayTime: 'Saturday, 8:00 PM - 11:00 PM', location: '3951 Broadway Boulevard, Kansas City, MO 64111' },
+    { date: new Date('2026-05-22T17:00:00'), month: 'MAY', day: '22', venue: 'Woodside', dayTime: 'Friday, 5:00 PM - 8:00 PM', location: 'Kansas City, MO' },
     { date: new Date('2026-05-23T21:00:00'), month: 'MAY', day: '23', venue: 'Nighthawk', dayTime: 'Saturday, 9:00 PM - 1:00 AM', location: '1228 Baltimore Ave, Kansas City, MO 64105' },
     { date: new Date('2026-06-26T21:00:00'), month: 'JUN', day: '26', venue: 'Tin Roof - Kansas City', dayTime: 'Friday, 9:00 PM - 1:00 AM', location: '424 Westport Road, Kansas City, MO 64111' },
     { date: new Date('2026-06-27T21:00:00'), month: 'JUN', day: '27', venue: 'Nighthawk', dayTime: 'Saturday, 9:00 PM - 1:00 AM', location: '1228 Baltimore Ave, Kansas City, MO 64105' },
@@ -29,13 +28,17 @@ export class Shows {
     { date: new Date('2026-08-08T22:30:00'), month: 'AUG', day: '8', venue: 'Tin Roof - Kansas City', dayTime: 'Saturday, 10:30 PM - 2:30 AM', location: '424 Westport Road, Kansas City, MO 64111' },
     { date: new Date('2026-08-21T21:00:00'), month: 'AUG', day: '21', venue: 'Power & Light', dayTime: 'Friday, 9:00 PM - 12:00 AM', location: 'Power & Light District, Kansas City, MO' },
     { date: new Date('2026-08-29T21:00:00'), month: 'AUG', day: '29', venue: 'Nighthawk', dayTime: 'Saturday, 9:00 PM - 1:00 AM', location: '1228 Baltimore Ave, Kansas City, MO 64105' },
+    { date: new Date('2026-09-04T21:45:00'), month: 'SEP', day: '4', venue: 'Tin Roof - Fayetteville', dayTime: 'Friday, 9:45 PM - 1:45 AM', location: 'Fayetteville, AR' },
+    { date: new Date('2026-09-05T21:45:00'), month: 'SEP', day: '5', venue: 'Tin Roof - Fayetteville', dayTime: 'Saturday, 9:45 PM - 1:45 AM', location: 'Fayetteville, AR' },
     { date: new Date('2026-09-26T21:00:00'), month: 'SEP', day: '26', venue: 'Nighthawk', dayTime: 'Saturday, 9:00 PM - 1:00 AM', location: '1228 Baltimore Ave, Kansas City, MO 64105' }
   ]);
 
   upcomingShows = computed(() => {
     const now = new Date();
-    const cutoffTime = new Date(now.getTime() - 24 * 60 * 60 * 1000); // 24 hours ago
-    
+    const cutoffTime = new Date(now.getTime() - 24 * 60 * 60 * 1000);
     return this.allShows().filter(show => show.date > cutoffTime);
   });
+
+  nextShow = computed(() => this.upcomingShows()[0] ?? null);
+  laterShows = computed(() => this.upcomingShows().slice(1));
 }
