@@ -205,12 +205,28 @@ p {
   }
 }
 
+/* Shared content wrapper card for route views */
+.content-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.03) 100%), #1b1b1b;
+  border: none;
+  border-radius: var(--radius);
+  padding: var(--space-2xl) var(--space-xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition);
+  position: relative;
+
+  &:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+}
+
 /* Modern Buttons - Elevated Design */
 .btn-primary,
 .btn-secondary {
   display: inline-block;
-  padding: 1rem 2rem;
-  font-size: 0.9375rem;
+  padding: 0.72rem 1.35rem;
+  font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
   border-radius: var(--radius);
