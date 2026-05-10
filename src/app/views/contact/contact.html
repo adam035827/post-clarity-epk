@@ -15,10 +15,16 @@
 
         <div class="social-section">
           <div class="social-links">
-            <a href="https://instagram.com/postclarity_kc" target="_blank" rel="noopener" class="social-link">Instagram</a>
-            <a href="https://facebook.com/Post-Clarity-103570785341715" target="_blank" rel="noopener" class="social-link">Facebook</a>
-            <a href="https://tiktok.com/@post_clarity_kc" target="_blank" rel="noopener" class="social-link">TikTok</a>
-            <a href="https://youtube.com/channel/UC1_DICofQgApv-Vg_BpDaMQ" target="_blank" rel="noopener" class="social-link">YouTube</a>
+            @for (socialLink of socialLinks; track socialLink.label) {
+              <a [href]="socialLink.href" target="_blank" rel="noopener" class="social-link">
+                <span class="social-link__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path [attr.d]="socialLink.iconPath"></path>
+                  </svg>
+                </span>
+                <span class="social-link__label">{{ socialLink.label }}</span>
+              </a>
+            }
           </div>
         </div>
 

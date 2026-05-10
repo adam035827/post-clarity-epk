@@ -84,6 +84,14 @@
       padding-top: 0;
     }
 
+    @media (max-width: 480px) {
+      padding: var(--space-sm) var(--space-md);
+
+      &:first-child {
+        padding: var(--space-sm) var(--space-md);
+      }
+    }
+
     .audio-meta {
       h4 {
         margin: 0;

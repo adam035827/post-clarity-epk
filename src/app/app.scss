@@ -110,6 +110,10 @@
   box-shadow: var(--shadow-md);
   transition: all var(--transition);
   position: relative;
+
+  @media (max-width: 480px) {
+    padding: var(--space-lg) var(--space-lg);
+  }
   
   &:hover {
     box-shadow: var(--shadow-hover);
@@ -122,11 +126,20 @@
     &:last-child {
       margin-bottom: 0;
     }
+    
+    @media (max-width: 480px) {
+      margin-bottom: var(--space-sm);
+    }
   }
   
   ul, ol {
     margin-bottom: var(--space-lg);
-    padding-left: var(--space-lg);
+    padding-left: var(--space-xl);
+    
+    @media (max-width: 480px) {
+      margin-bottom: var(--space-md);
+      padding-left: var(--space-md);
+    }
     
     li {
       margin-bottom: var(--space-sm);
@@ -134,6 +147,10 @@
       
       &:last-child {
         margin-bottom: 0;
+      }
+      
+      @media (max-width: 480px) {
+        margin-bottom: var(--space-xs);
       }
     }
   }

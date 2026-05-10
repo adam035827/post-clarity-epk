@@ -215,9 +215,25 @@ p {
   transition: all var(--transition);
   position: relative;
 
-  &:hover {
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-2px);
+  @media (max-width: 480px) {
+    padding: var(--space-lg) var(--space-lg);
+  }
+
+  p {
+    margin-bottom: var(--space-sm);
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul, ol {
+    margin-bottom: var(--space-sm);
+    padding-left: var(--space-md);
+
+    li {
+      margin-bottom: var(--space-xs);
+    }
   }
 }
 
@@ -331,7 +347,7 @@ p {
 .booking-info,
 .technical-info {
   margin: var(--space-2xl) 0;
-  padding: var(--space-md) var(--space-xl);
+  padding: var(--space-md) var(--space-sm);
   background: var(--bg-gradient-teal), var(--bg-card);
   border-left: 3px solid var(--color-teal);
   border-radius: var(--radius);
@@ -368,14 +384,17 @@ p {
 
 /* Lists - Modern */
 ul {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   list-style: none;
   padding-left: 0;
+  align-self: anchor-center;
   
   li {
     padding: 0.625rem 0;
     color: var(--color-text-muted);
     position: relative;
-    padding-left: var(--space-md);
+    padding-left: var(--space-sm);
     
     &::before {
       content: '•';
