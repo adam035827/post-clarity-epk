@@ -41,13 +41,13 @@ export class Media implements OnInit {
       {
         title: 'Post Clarity - Featured Video 1',
         url: this.sanitizer.bypassSecurityTrustResourceUrl(
-          'https://www.youtube.com/embed/AHosHYoy13E?rel=0&modestbranding=1'
+            'https://www.youtube-nocookie.com/embed/AHosHYoy13E?rel=0&modestbranding=1'
         )
       },
       {
         title: 'Post Clarity - Featured Video 2',
         url: this.sanitizer.bypassSecurityTrustResourceUrl(
-          'https://www.youtube.com/embed/26nBHupxms0?rel=0&modestbranding=1'
+            'https://www.youtube-nocookie.com/embed/26nBHupxms0?rel=0&modestbranding=1'
         )
       }
     ];
