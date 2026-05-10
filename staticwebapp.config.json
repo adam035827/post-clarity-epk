@@ -23,6 +23,7 @@
   },
   "globalHeaders": {
     "content-security-policy": "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https:;",
+    "referrer-policy": "strict-origin-when-cross-origin",
     "cache-control": "must-revalidate, max-age=3600"
   }
 }
