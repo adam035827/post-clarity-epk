@@ -3,7 +3,7 @@ import { Home } from './views/home/home';
 import { Bio } from './views/bio/bio';
 import { Shows } from './views/shows/shows';
 import { Photos } from './views/photos/photos';
-import { Videos } from './views/videos/videos';
+import { Media } from './views/media/media';
 import { Press } from './views/press/press';
 import { Contact } from './views/contact/contact';
 
@@ -12,7 +12,8 @@ export const routes: Routes = [
   { path: 'bio', component: Bio },
   { path: 'shows', component: Shows },
   { path: 'photos', component: Photos },
-  { path: 'videos', component: Videos },
+  { path: 'media', component: Media },
+  { path: 'videos', redirectTo: 'media', pathMatch: 'full' },
   { path: 'press', component: Press },
   { path: 'contact', component: Contact },
   { path: '**', redirectTo: '' }

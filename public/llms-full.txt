@@ -111,7 +111,7 @@ This is the official Electronic Press Kit (EPK) for Post Clarity, built as a sin
 - / — Home / EPK landing page
 - /bio — Band biography
 - /shows — Upcoming performances
-- /videos — Performance and music videos
+- /media — Performance videos and audio clips
 - /photos — Band photography
 - /press — Press kit and media downloads
 - /contact — Booking and contact information

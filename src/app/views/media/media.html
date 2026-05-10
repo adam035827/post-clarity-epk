@@ -1,0 +1,106 @@
+<section class="media-section section">
+  <div class="container">
+    <h1 class="section-title">Media</h1>
+    <div class="content">
+      <div class="content-card">
+        <p>
+          Check out our live performances, event highlights, and audio clips.
+          Follow us on Instagram and YouTube for the latest media.
+        </p>
+      </div>
+
+      <div class="featured-videos">
+        @for (embed of featuredMediaEmbeds; track embed.title) {
+          <div class="featured-video">
+            <iframe
+              [src]="embed.url"
+              [attr.title]="embed.title"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        }
+      </div>
+
+      @if (audioClips.length > 0) {
+        <section class="audio-section content-card" aria-label="Audio clips">
+          <h3>Audio Clips</h3>
+          <div class="audio-list">
+            @for (clip of audioClips; track clip.url) {
+              <article class="audio-item">
+                <div class="audio-meta">
+                  <h4>{{ clip.title }}</h4>
+                  @if (clip.note) {
+                    <p>{{ clip.note }}</p>
+                  }
+                </div>
+                <audio controls preload="none" [attr.aria-label]="clip.title">
+                  <source [src]="clip.url" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </article>
+            }
+          </div>
+        </section>
+      }
+
+      <div class="video-grid">
+        @for (mediaVideo of mediaVideos; track mediaVideo.url; let i = $index) {
+          <div class="video-item" (click)="openMediaVideo(i)">
+            <video class="video-thumbnail" muted preload="auto" crossorigin="anonymous" [attr.poster]="mediaVideo.poster">
+              <source [src]="mediaVideo.url" type="video/mp4">
+            </video>
+            <div class="video-overlay">
+              <div class="play-button">▶</div>
+            </div>
+          </div>
+        }
+      </div>
+
+      @if (selectedMediaIndex() !== null) {
+        <div class="video-modal" (click)="closeMediaVideo()">
+          <button class="modal-close" (click)="closeMediaVideo()" aria-label="Close">&times;</button>
+          
+          @if (selectedMediaIndex()! > 0) {
+            <button class="modal-nav modal-prev" (click)="previousMediaVideo(); $event.stopPropagation()" aria-label="Previous video">
+              &#8249;
+            </button>
+          }
+          
+          @if (selectedMediaIndex()! < mediaVideos.length - 1) {
+            <button class="modal-nav modal-next" (click)="nextMediaVideo(); $event.stopPropagation()" aria-label="Next video">
+              &#8250;
+            </button>
+          }
+          
+          <div class="modal-content" (click)="$event.stopPropagation()">
+            <video controls autoplay crossorigin="anonymous" [attr.poster]="mediaVideos[selectedMediaIndex()!].poster">
+              <source [src]="mediaVideos[selectedMediaIndex()!].url" type="video/mp4">
+            </video>
+            <div class="modal-counter">{{ selectedMediaIndex()! + 1 }} / {{ mediaVideos.length }}</div>
+          </div>
+        </div>
+      }
+
+      <div class="content-card" style="margin-top: 3rem;">
+        <div class="social-section">
+          <h3>More Media</h3>
+          <p>
+            Find more performance videos, reels, and behind-the-scenes content on our social channels.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com/postclarity_kc" target="_blank" rel="noopener" class="platform-link">
+              <span class="icon">📸</span>
+              <span>Instagram - @postclarity_kc</span>
+            </a>
+            <a href="https://youtube.com/channel/UC1_DICofQgApv-Vg_BpDaMQ" target="_blank" rel="noopener" class="platform-link">
+              <span class="icon">▶️</span>
+              <span>YouTube Channel</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

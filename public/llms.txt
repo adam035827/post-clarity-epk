@@ -26,7 +26,7 @@ Upcoming shows include:
 
 ## Media & Press
 
-- [Videos](/videos): Live performance videos and music videos.
+- [Media](/media): Live performance videos and audio clips.
 - [Photos](/photos): Band and live performance photography.
 - [Press](/press): Press kit downloads, bios, and media assets.
 
