@@ -42,21 +42,43 @@
     }
 
     .awards-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: var(--space-xl);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-lg);
+      align-items: start;
     }
 
     .award-image {
-      max-width: 200px;
-      height: auto;
+      width: 100%;
+      max-width: 220px;
+      height: 360px;
+      justify-self: center;
+      object-fit: cover;
+      object-position: center;
       border-radius: var(--radius);
       box-shadow: var(--shadow-md);
       
+      @media (max-width: 1024px) {
+        max-width: 190px;
+        height: 320px;
+      }
+
       @media (max-width: 768px) {
         max-width: 150px;
+        height: 250px;
       }
+    }
+
+    .award-image:nth-child(3) {
+      object-position: center 42%;
+    }
+
+    .award-image:nth-child(2) {
+      object-fit: contain;
+      object-position: center;
+      box-sizing: border-box;
+      padding: 0 10px;
+      background: #ffffff;
     }
   }
 
